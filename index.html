@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard de Población y Nacimientos</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        h1 { text-align: center; margin-bottom: 30px; }
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .grafica {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 Dashboard de Población y Nacimientos (2018–2022)</h1>
+
+    <div class="dashboard">
+        <!-- Gráfico de líneas -->
+        <div class="grafica" role="figure" aria-label="Evolución de la población por año">
+            <h2>Evolución de la Población</h2>
+            <canvas id="graficoLineas"></canvas>
+        </div>
+
+        <!-- Gráfico de barras -->
+        <div class="grafica" role="figure" aria-label="Número de nacimientos por año">
+            <h2>Nacimientos por Año</h2>
+            <canvas id="graficoBarras"></canvas>
+        </div>
+
+        <!-- Gráfico de pastel -->
+        <div class="grafica" role="figure" aria-label="Distribución proporcional de nacimientos en el periodo">
+            <h2>Distribución de Nacimientos</h2>
+            <canvas id="graficoPastel"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const datos = {
+            anios: ["2018", "2019", "2020", "2021", "2022"],
+            poblacion: [126, 127, 128, 129, 130],
+            nacimientos: [2.1, 2.0, 1.9, 1.8, 1.7]
+        };
+
+        // Gráfico de líneas: Población
+        new Chart(document.getElementById("graficoLineas"), {
+            type: "line",
+            data: {
+                labels: datos.anios,
+                datasets: [{
+                    label: "Población (millones)",
+                    data: datos.poblacion,
+                    borderColor: "#007bff",
+                    backgroundColor: "#007bff33",
+                    borderWidth: 2,
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: "top" },
+                    tooltip: { enabled: true }
+                }
+            }
+        });
+
+        // Gráfico de barras: Nacimientos
+        new Chart(document.getElementById("graficoBarras"), {
+            type: "bar",
+            data: {
+                labels: datos.anios,
+                datasets: [{
+                    label: "Nacimientos (millones)",
+                    data: datos.nacimientos,
+                    backgroundColor: "#27ae60",
+                    borderColor: "#1e8449",
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: true }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Gráfico de pastel: Distribución de nacimientos
+        new Chart(document.getElementById("graficoPastel"), {
+            type: "pie",
+            data: {
+                labels: datos.anios,
+                datasets: [{
+                    label: "Nacimientos (millones)",
+                    data: datos.nacimientos,
+                    backgroundColor: ["#e74c3c", "#f39c12", "#f1c40f", "#27ae60", "#2980b9"]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: "right" },
+                    tooltip: { enabled: true }
+                }
+            }
+        });
+    </script>
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Página de Práctica Juan Carlos Hernández Hernández HTML 5C4. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
