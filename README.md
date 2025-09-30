@@ -16,14 +16,14 @@ El objetivo es analizar la evolución de la población y nacimientos en un perio
 ---
 
 ## 📂 Contenido del repositorio
-- `index.html` → Código del dashboard web.  
-- `Explicacion_Dashboard.pdf` → Documento explicativo con objetivos, estructura, implementación y reflexiones.  
+- `Tarea 5C4.html` → Código del dashboard web.  
+- `Explicacion_Dashboard M5C4.pdf` → Documento explicativo con objetivos, estructura, implementación y reflexiones.  
 
 ---
 
 ## 🌐 Demo en línea
 Si el repositorio está configurado con **GitHub Pages**, el dashboard estará disponible en:  
-👉 [https://JC-2026.github.io/dashboard-poblacion-nacimientos/](https://JC-2026.github.io/dashboard-poblacion-nacimientos/)  
+👉 (https://github.com/JC-2026/Dashboards-y-Visualizacion-de-Datos-en-la-Web)  
 
 ---
 
