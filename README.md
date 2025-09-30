@@ -23,7 +23,7 @@ El objetivo es analizar la evolución de la población y nacimientos en un perio
 
 ## 🌐 Demo en línea
 Configurado con **GitHub Pages**, dashboard disponible en:  
-👉 (https://github.com/JC-2026/Dashboards-y-Visualizacion-de-Datos-en-la-Web)  
+👉 (https://jc-2026.github.io/Dashboards-y-Visualizacion-de-Datos-en-la-Web/)  
 
 ---
 
